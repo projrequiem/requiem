@@ -1,0 +1,10 @@
+{
+	"_ref_timestamp": "uint64_t ",
+	"_ref_lat":"double",
+	"_ref_lon":"double",
+	"_ref_sin_lat":"double",
+	"_ref_cos_lat":"double",
+	"_ref_init_done":"bool",
+    "~serialize":"{uint64_t a; double b,c,d,e; bool f; %s.get(a, b, c, d, e, f); structObj.AddMember(\"_ref_timestamp\", a, allocator);structObj.AddMember(\"_ref_lat\", b, allocator);structObj.AddMember(\"_ref_lon\", c, allocator);structObj.AddMember(\"_ref_sin_lat\", d, allocator);structObj.AddMember(\"_ref_cos_lat\", e, allocator);structObj.AddMember(\"_ref_init_done\", f, allocator);}\n",
+    "~load":"%s.set(structObj[\"_ref_timestamp\"].GetUint64(), structObj[\"_ref_lat\"].GetDouble(), structObj[\"_ref_lon\"].GetDouble(), structObj[\"_ref_sin_lat\"].GetDouble(), structObj[\"_ref_cos_lat\"].GetDouble(), structObj[\"_ref_init_done\"].GetBool());"
+}

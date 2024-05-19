@@ -1,0 +1,7 @@
+{
+    "bias":"float",
+    "bias_var":"float",
+    "innov":"float",
+    "innov_var":"float",
+    "innov_test_ratio":"float"
+}

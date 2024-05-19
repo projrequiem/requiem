@@ -1,0 +1,1 @@
+{"time_us": "uint64_t", "pos": "Vector3f", "vel": "Vector3f", "quat": "Quatf", "posVar": "Vector3f", "velCov": "Matrix3f", "angVar": "float", "vel_frame = velocity_frame_t::BODY_FRAME_FRD": "velocity_frame_t", "reset_counter": "uint8_t"}

@@ -1,0 +1,1 @@
+{"time_us": "uint64_t", "delta_ang": "Vector3f", "delta_vel": "Vector3f", "delta_ang_dt": "float", "delta_vel_dt": "float", "delta_vel_clipping": "bool[3]"}

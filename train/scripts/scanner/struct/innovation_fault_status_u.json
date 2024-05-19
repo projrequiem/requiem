@@ -1,0 +1,22 @@
+{
+    "flags": {
+        "reject_airspeed": "bool",
+        "reject_hagl": "bool",
+        "reject_hor_pos": "bool",
+        "reject_hor_vel": "bool",
+        "reject_mag_x": "bool",
+        "reject_mag_y": "bool",
+        "reject_mag_z": "bool",
+        "reject_optflow_X": "bool",
+        "reject_optflow_Y": "bool",
+        "reject_sideslip": "bool",
+        "reject_ver_pos": "bool",
+        "reject_ver_vel": "bool",
+        "reject_yaw": "bool"
+    },
+    "value": "uint16_t",
+    "~assert": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());assert(ekfObj[\"%s\"][\"flags\"][\"reject_hor_vel\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_ver_vel\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_hor_pos\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_ver_pos\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_mag_x\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_mag_y\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_mag_z\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_yaw\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_airspeed\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_sideslip\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_hagl\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_optflow_X\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reject_optflow_Y\"].IsBool());}",
+    "~load": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());\n\trapidjson::Value& structObj = ekfObj[\"%s\"][\"flags\"];%s.flags.reject_hor_vel = structObj[\"reject_hor_vel\"].GetBool();\n%s.flags.reject_ver_vel = structObj[\"reject_ver_vel\"].GetBool();\n%s.flags.reject_hor_pos = structObj[\"reject_hor_pos\"].GetBool();\n%s.flags.reject_ver_pos = structObj[\"reject_ver_pos\"].GetBool();\n%s.flags.reject_mag_x = structObj[\"reject_mag_x\"].GetBool();\n%s.flags.reject_mag_y = structObj[\"reject_mag_y\"].GetBool();\n%s.flags.reject_mag_z = structObj[\"reject_mag_z\"].GetBool();\n%s.flags.reject_yaw = structObj[\"reject_yaw\"].GetBool();\n%s.flags.reject_airspeed = structObj[\"reject_airspeed\"].GetBool();\n%s.flags.reject_sideslip = structObj[\"reject_sideslip\"].GetBool();\n%s.flags.reject_hagl = structObj[\"reject_hagl\"].GetBool();\n%s.flags.reject_optflow_X = structObj[\"reject_optflow_X\"].GetBool();\n%s.flags.reject_optflow_Y = structObj[\"reject_optflow_Y\"].GetBool();\n}",
+    "~serialize": "\n{\n\trapidjson::Value structObj(rapidjson::kObjectType);\nstructObj.SetObject();\n\trapidjson::Value innerStructObj(rapidjson::kObjectType);\ninnerStructObj.SetObject();\n\tinnerStructObj.AddMember(\"reject_hor_vel\",%s.flags.reject_hor_vel, allocator);\n\tinnerStructObj.AddMember(\"reject_ver_vel\",%s.flags.reject_ver_vel, allocator);\n\tinnerStructObj.AddMember(\"reject_hor_pos\",%s.flags.reject_hor_pos, allocator);\n\tinnerStructObj.AddMember(\"reject_ver_pos\",%s.flags.reject_ver_pos, allocator);\n\tinnerStructObj.AddMember(\"reject_mag_x\",%s.flags.reject_mag_x, allocator);\n\tinnerStructObj.AddMember(\"reject_mag_y\",%s.flags.reject_mag_y, allocator);\n\tinnerStructObj.AddMember(\"reject_mag_z\",%s.flags.reject_mag_z, allocator);\n\tinnerStructObj.AddMember(\"reject_yaw\",%s.flags.reject_yaw, allocator);\n\tinnerStructObj.AddMember(\"reject_airspeed\",%s.flags.reject_airspeed, allocator);\n\tinnerStructObj.AddMember(\"reject_sideslip\",%s.flags.reject_sideslip, allocator);\n\tinnerStructObj.AddMember(\"reject_hagl\",%s.flags.reject_hagl, allocator);\n\tinnerStructObj.AddMember(\"reject_optflow_X\",%s.flags.reject_optflow_X, allocator);\n\tinnerStructObj.AddMember(\"reject_optflow_Y\",%s.flags.reject_optflow_Y, allocator);\n\tstructObj.AddMember(\"flags\", innerStructObj, allocator);\n\tekfObj.AddMember(\"%s\", structObj, allocator);\n}",
+    "~union": true
+}

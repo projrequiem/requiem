@@ -1,0 +1,27 @@
+{
+    "flags": {
+        "bad_acc_bias": "bool",
+        "bad_acc_clipping": "bool",
+        "bad_acc_vertical": "bool",
+        "bad_airspeed": "bool",
+        "bad_hdg": "bool",
+        "bad_mag_decl": "bool",
+        "bad_mag_x": "bool",
+        "bad_mag_y": "bool",
+        "bad_mag_z": "bool",
+        "bad_optflow_X": "bool",
+        "bad_optflow_Y": "bool",
+        "bad_pos_D": "bool",
+        "bad_pos_E": "bool",
+        "bad_pos_N": "bool",
+        "bad_sideslip": "bool",
+        "bad_vel_D": "bool",
+        "bad_vel_E": "bool",
+        "bad_vel_N": "bool"
+    },
+    "value": "uint32_t",
+    "~assert": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());assert(ekfObj[\"%s\"][\"flags\"][\"bad_mag_x\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_mag_y\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_mag_z\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_hdg\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_mag_decl\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_airspeed\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_sideslip\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_optflow_X\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_optflow_Y\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_vel_N\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_vel_E\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_vel_D\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_pos_N\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_pos_E\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_pos_D\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_acc_bias\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_acc_vertical\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_acc_clipping\"].IsBool());}",
+    "~load": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());\n\trapidjson::Value& structObj = ekfObj[\"%s\"][\"flags\"];%s.flags.bad_mag_x = structObj[\"bad_mag_x\"].GetBool();\n%s.flags.bad_mag_y = structObj[\"bad_mag_y\"].GetBool();\n%s.flags.bad_mag_z = structObj[\"bad_mag_z\"].GetBool();\n%s.flags.bad_hdg = structObj[\"bad_hdg\"].GetBool();\n%s.flags.bad_mag_decl = structObj[\"bad_mag_decl\"].GetBool();\n%s.flags.bad_airspeed = structObj[\"bad_airspeed\"].GetBool();\n%s.flags.bad_sideslip = structObj[\"bad_sideslip\"].GetBool();\n%s.flags.bad_optflow_X = structObj[\"bad_optflow_X\"].GetBool();\n%s.flags.bad_optflow_Y = structObj[\"bad_optflow_Y\"].GetBool();\n%s.flags.bad_vel_N = structObj[\"bad_vel_N\"].GetBool();\n%s.flags.bad_vel_E = structObj[\"bad_vel_E\"].GetBool();\n%s.flags.bad_vel_D = structObj[\"bad_vel_D\"].GetBool();\n%s.flags.bad_pos_N = structObj[\"bad_pos_N\"].GetBool();\n%s.flags.bad_pos_E = structObj[\"bad_pos_E\"].GetBool();\n%s.flags.bad_pos_D = structObj[\"bad_pos_D\"].GetBool();\n%s.flags.bad_acc_bias = structObj[\"bad_acc_bias\"].GetBool();\n%s.flags.bad_acc_vertical = structObj[\"bad_acc_vertical\"].GetBool();\n%s.flags.bad_acc_clipping = structObj[\"bad_acc_clipping\"].GetBool();\n}",
+    "~serialize": "\n{\n\trapidjson::Value structObj(rapidjson::kObjectType);\nstructObj.SetObject();\n\trapidjson::Value innerStructObj(rapidjson::kObjectType);\ninnerStructObj.SetObject();\n\tinnerStructObj.AddMember(\"bad_mag_x\",%s.flags.bad_mag_x, allocator);\n\tinnerStructObj.AddMember(\"bad_mag_y\",%s.flags.bad_mag_y, allocator);\n\tinnerStructObj.AddMember(\"bad_mag_z\",%s.flags.bad_mag_z, allocator);\n\tinnerStructObj.AddMember(\"bad_hdg\",%s.flags.bad_hdg, allocator);\n\tinnerStructObj.AddMember(\"bad_mag_decl\",%s.flags.bad_mag_decl, allocator);\n\tinnerStructObj.AddMember(\"bad_airspeed\",%s.flags.bad_airspeed, allocator);\n\tinnerStructObj.AddMember(\"bad_sideslip\",%s.flags.bad_sideslip, allocator);\n\tinnerStructObj.AddMember(\"bad_optflow_X\",%s.flags.bad_optflow_X, allocator);\n\tinnerStructObj.AddMember(\"bad_optflow_Y\",%s.flags.bad_optflow_Y, allocator);\n\tinnerStructObj.AddMember(\"bad_vel_N\",%s.flags.bad_vel_N, allocator);\n\tinnerStructObj.AddMember(\"bad_vel_E\",%s.flags.bad_vel_E, allocator);\n\tinnerStructObj.AddMember(\"bad_vel_D\",%s.flags.bad_vel_D, allocator);\n\tinnerStructObj.AddMember(\"bad_pos_N\",%s.flags.bad_pos_N, allocator);\n\tinnerStructObj.AddMember(\"bad_pos_E\",%s.flags.bad_pos_E, allocator);\n\tinnerStructObj.AddMember(\"bad_pos_D\",%s.flags.bad_pos_D, allocator);\n\tinnerStructObj.AddMember(\"bad_acc_bias\",%s.flags.bad_acc_bias, allocator);\n\tinnerStructObj.AddMember(\"bad_acc_vertical\",%s.flags.bad_acc_vertical, allocator);\n\tinnerStructObj.AddMember(\"bad_acc_clipping\",%s.flags.bad_acc_clipping, allocator);\n\tstructObj.AddMember(\"flags\", innerStructObj, allocator);\n\tekfObj.AddMember(\"%s\", structObj, allocator);\n}",
+    "~union": true
+}

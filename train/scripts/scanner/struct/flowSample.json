@@ -1,0 +1,1 @@
+{"time_us": "uint64_t", "flow_xy_rad": "Vector2f", "gyro_xyz": "Vector3f", "dt": "float", "quality": "uint8_t"}

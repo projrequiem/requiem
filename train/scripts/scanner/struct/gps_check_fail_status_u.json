@@ -1,0 +1,19 @@
+{
+    "flags": {
+        "fix": "uint16_t",
+        "hacc": "uint16_t",
+        "hdrift": "uint16_t",
+        "hspeed": "uint16_t",
+        "nsats": "uint16_t",
+        "pdop": "uint16_t",
+        "sacc": "uint16_t",
+        "vacc": "uint16_t",
+        "vdrift": "uint16_t",
+        "vspeed": "uint16_t"
+    },
+    "value": "uint16_t",
+    "~assert": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());assert(ekfObj[\"%s\"][\"flags\"][\"fix\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"nsats\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"pdop\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"hacc\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"vacc\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"sacc\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"hdrift\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"vdrift\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"hspeed\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"vspeed\"].IsUint());}",
+    "~load": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());\n\trapidjson::Value& structObj = ekfObj[\"%s\"][\"flags\"];%s.flags.fix = structObj[\"fix\"].GetUint();\n%s.flags.nsats = structObj[\"nsats\"].GetUint();\n%s.flags.pdop = structObj[\"pdop\"].GetUint();\n%s.flags.hacc = structObj[\"hacc\"].GetUint();\n%s.flags.vacc = structObj[\"vacc\"].GetUint();\n%s.flags.sacc = structObj[\"sacc\"].GetUint();\n%s.flags.hdrift = structObj[\"hdrift\"].GetUint();\n%s.flags.vdrift = structObj[\"vdrift\"].GetUint();\n%s.flags.hspeed = structObj[\"hspeed\"].GetUint();\n%s.flags.vspeed = structObj[\"vspeed\"].GetUint();\n}",
+    "~serialize": "\n{\n\trapidjson::Value structObj(rapidjson::kObjectType);\nstructObj.SetObject();\n\trapidjson::Value innerStructObj(rapidjson::kObjectType);\ninnerStructObj.SetObject();\n\tinnerStructObj.AddMember(\"fix\",%s.flags.fix, allocator);\n\tinnerStructObj.AddMember(\"nsats\",%s.flags.nsats, allocator);\n\tinnerStructObj.AddMember(\"pdop\",%s.flags.pdop, allocator);\n\tinnerStructObj.AddMember(\"hacc\",%s.flags.hacc, allocator);\n\tinnerStructObj.AddMember(\"vacc\",%s.flags.vacc, allocator);\n\tinnerStructObj.AddMember(\"sacc\",%s.flags.sacc, allocator);\n\tinnerStructObj.AddMember(\"hdrift\",%s.flags.hdrift, allocator);\n\tinnerStructObj.AddMember(\"vdrift\",%s.flags.vdrift, allocator);\n\tinnerStructObj.AddMember(\"hspeed\",%s.flags.hspeed, allocator);\n\tinnerStructObj.AddMember(\"vspeed\",%s.flags.vspeed, allocator);\n\tstructObj.AddMember(\"flags\", innerStructObj, allocator);\n\tekfObj.AddMember(\"%s\", structObj, allocator);\n}",
+    "~union": true
+}

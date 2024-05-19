@@ -1,0 +1,21 @@
+{
+    "flags": {
+        "bad_yaw_using_gps_course": "bool",
+        "emergency_yaw_reset_gps_yaw_stopped": "bool",
+        "emergency_yaw_reset_mag_stopped": "bool",
+        "gps_data_stopped": "bool",
+        "gps_data_stopped_using_alternate": "bool",
+        "gps_fusion_timout": "bool",
+        "gps_quality_poor": "bool",
+        "height_sensor_timeout": "bool",
+        "invalid_accel_bias_cov_reset": "bool",
+        "stopping_mag_use": "bool",
+        "stopping_navigation": "bool",
+        "vision_data_stopped": "bool"
+    },
+    "value": "uint32_t",
+    "~assert": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());assert(ekfObj[\"%s\"][\"flags\"][\"gps_quality_poor\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"gps_fusion_timout\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"gps_data_stopped\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"gps_data_stopped_using_alternate\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"height_sensor_timeout\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"stopping_navigation\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"invalid_accel_bias_cov_reset\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"bad_yaw_using_gps_course\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"stopping_mag_use\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"vision_data_stopped\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"emergency_yaw_reset_mag_stopped\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"emergency_yaw_reset_gps_yaw_stopped\"].IsBool());}",
+    "~load": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());\n\trapidjson::Value& structObj = ekfObj[\"%s\"][\"flags\"];%s.flags.gps_quality_poor = structObj[\"gps_quality_poor\"].GetBool();\n%s.flags.gps_fusion_timout = structObj[\"gps_fusion_timout\"].GetBool();\n%s.flags.gps_data_stopped = structObj[\"gps_data_stopped\"].GetBool();\n%s.flags.gps_data_stopped_using_alternate = structObj[\"gps_data_stopped_using_alternate\"].GetBool();\n%s.flags.height_sensor_timeout = structObj[\"height_sensor_timeout\"].GetBool();\n%s.flags.stopping_navigation = structObj[\"stopping_navigation\"].GetBool();\n%s.flags.invalid_accel_bias_cov_reset = structObj[\"invalid_accel_bias_cov_reset\"].GetBool();\n%s.flags.bad_yaw_using_gps_course = structObj[\"bad_yaw_using_gps_course\"].GetBool();\n%s.flags.stopping_mag_use = structObj[\"stopping_mag_use\"].GetBool();\n%s.flags.vision_data_stopped = structObj[\"vision_data_stopped\"].GetBool();\n%s.flags.emergency_yaw_reset_mag_stopped = structObj[\"emergency_yaw_reset_mag_stopped\"].GetBool();\n%s.flags.emergency_yaw_reset_gps_yaw_stopped = structObj[\"emergency_yaw_reset_gps_yaw_stopped\"].GetBool();\n}",
+    "~serialize": "\n{\n\trapidjson::Value structObj(rapidjson::kObjectType);\nstructObj.SetObject();\n\trapidjson::Value innerStructObj(rapidjson::kObjectType);\ninnerStructObj.SetObject();\n\tinnerStructObj.AddMember(\"gps_quality_poor\",%s.flags.gps_quality_poor, allocator);\n\tinnerStructObj.AddMember(\"gps_fusion_timout\",%s.flags.gps_fusion_timout, allocator);\n\tinnerStructObj.AddMember(\"gps_data_stopped\",%s.flags.gps_data_stopped, allocator);\n\tinnerStructObj.AddMember(\"gps_data_stopped_using_alternate\",%s.flags.gps_data_stopped_using_alternate, allocator);\n\tinnerStructObj.AddMember(\"height_sensor_timeout\",%s.flags.height_sensor_timeout, allocator);\n\tinnerStructObj.AddMember(\"stopping_navigation\",%s.flags.stopping_navigation, allocator);\n\tinnerStructObj.AddMember(\"invalid_accel_bias_cov_reset\",%s.flags.invalid_accel_bias_cov_reset, allocator);\n\tinnerStructObj.AddMember(\"bad_yaw_using_gps_course\",%s.flags.bad_yaw_using_gps_course, allocator);\n\tinnerStructObj.AddMember(\"stopping_mag_use\",%s.flags.stopping_mag_use, allocator);\n\tinnerStructObj.AddMember(\"vision_data_stopped\",%s.flags.vision_data_stopped, allocator);\n\tinnerStructObj.AddMember(\"emergency_yaw_reset_mag_stopped\",%s.flags.emergency_yaw_reset_mag_stopped, allocator);\n\tinnerStructObj.AddMember(\"emergency_yaw_reset_gps_yaw_stopped\",%s.flags.emergency_yaw_reset_gps_yaw_stopped, allocator);\n\tstructObj.AddMember(\"flags\", innerStructObj, allocator);\n\tekfObj.AddMember(\"%s\", structObj, allocator);\n}",
+    "~union": true
+}

@@ -1,0 +1,8 @@
+{
+    "R": "Dcmf",
+    "gyro_bias": "Vector3f",
+    "aligned": "bool",
+    "vel_NE": "float[2]",
+    "fuse_gps": "bool",
+    "accel_dt": "float"
+}

@@ -1,0 +1,22 @@
+{
+    "flags": {
+        "gps_checks_passed": "bool",
+        "reset_pos_to_gps": "bool",
+        "reset_pos_to_last_known": "bool",
+        "reset_pos_to_vision": "bool",
+        "reset_vel_to_flow": "bool",
+        "reset_vel_to_gps": "bool",
+        "reset_vel_to_vision": "bool",
+        "reset_vel_to_zero": "bool",
+        "starting_gps_fusion": "bool",
+        "starting_vision_pos_fusion": "bool",
+        "starting_vision_vel_fusion": "bool",
+        "starting_vision_yaw_fusion": "bool",
+        "yaw_aligned_to_imu_gps": "bool"
+    },
+    "value": "uint32_t",
+    "~assert": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());assert(ekfObj[\"%s\"][\"flags\"][\"gps_checks_passed\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reset_vel_to_gps\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reset_vel_to_flow\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reset_vel_to_vision\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reset_vel_to_zero\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reset_pos_to_last_known\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reset_pos_to_gps\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"reset_pos_to_vision\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"starting_gps_fusion\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"starting_vision_pos_fusion\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"starting_vision_vel_fusion\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"starting_vision_yaw_fusion\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"yaw_aligned_to_imu_gps\"].IsBool());}",
+    "~load": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());\n\trapidjson::Value& structObj = ekfObj[\"%s\"][\"flags\"];%s.flags.gps_checks_passed = structObj[\"gps_checks_passed\"].GetBool();\n%s.flags.reset_vel_to_gps = structObj[\"reset_vel_to_gps\"].GetBool();\n%s.flags.reset_vel_to_flow = structObj[\"reset_vel_to_flow\"].GetBool();\n%s.flags.reset_vel_to_vision = structObj[\"reset_vel_to_vision\"].GetBool();\n%s.flags.reset_vel_to_zero = structObj[\"reset_vel_to_zero\"].GetBool();\n%s.flags.reset_pos_to_last_known = structObj[\"reset_pos_to_last_known\"].GetBool();\n%s.flags.reset_pos_to_gps = structObj[\"reset_pos_to_gps\"].GetBool();\n%s.flags.reset_pos_to_vision = structObj[\"reset_pos_to_vision\"].GetBool();\n%s.flags.starting_gps_fusion = structObj[\"starting_gps_fusion\"].GetBool();\n%s.flags.starting_vision_pos_fusion = structObj[\"starting_vision_pos_fusion\"].GetBool();\n%s.flags.starting_vision_vel_fusion = structObj[\"starting_vision_vel_fusion\"].GetBool();\n%s.flags.starting_vision_yaw_fusion = structObj[\"starting_vision_yaw_fusion\"].GetBool();\n%s.flags.yaw_aligned_to_imu_gps = structObj[\"yaw_aligned_to_imu_gps\"].GetBool();\n}",
+    "~serialize": "\n{\n\trapidjson::Value structObj(rapidjson::kObjectType);\nstructObj.SetObject();\n\trapidjson::Value innerStructObj(rapidjson::kObjectType);\ninnerStructObj.SetObject();\n\tinnerStructObj.AddMember(\"gps_checks_passed\",%s.flags.gps_checks_passed, allocator);\n\tinnerStructObj.AddMember(\"reset_vel_to_gps\",%s.flags.reset_vel_to_gps, allocator);\n\tinnerStructObj.AddMember(\"reset_vel_to_flow\",%s.flags.reset_vel_to_flow, allocator);\n\tinnerStructObj.AddMember(\"reset_vel_to_vision\",%s.flags.reset_vel_to_vision, allocator);\n\tinnerStructObj.AddMember(\"reset_vel_to_zero\",%s.flags.reset_vel_to_zero, allocator);\n\tinnerStructObj.AddMember(\"reset_pos_to_last_known\",%s.flags.reset_pos_to_last_known, allocator);\n\tinnerStructObj.AddMember(\"reset_pos_to_gps\",%s.flags.reset_pos_to_gps, allocator);\n\tinnerStructObj.AddMember(\"reset_pos_to_vision\",%s.flags.reset_pos_to_vision, allocator);\n\tinnerStructObj.AddMember(\"starting_gps_fusion\",%s.flags.starting_gps_fusion, allocator);\n\tinnerStructObj.AddMember(\"starting_vision_pos_fusion\",%s.flags.starting_vision_pos_fusion, allocator);\n\tinnerStructObj.AddMember(\"starting_vision_vel_fusion\",%s.flags.starting_vision_vel_fusion, allocator);\n\tinnerStructObj.AddMember(\"starting_vision_yaw_fusion\",%s.flags.starting_vision_yaw_fusion, allocator);\n\tinnerStructObj.AddMember(\"yaw_aligned_to_imu_gps\",%s.flags.yaw_aligned_to_imu_gps, allocator);\n\tstructObj.AddMember(\"flags\", innerStructObj, allocator);\n\tekfObj.AddMember(\"%s\", structObj, allocator);\n}",
+    "~union": true
+}

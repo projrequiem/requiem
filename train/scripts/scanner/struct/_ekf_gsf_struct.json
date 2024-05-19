@@ -1,0 +1,7 @@
+{
+    "X": "Vector3f",
+    "P": "SquareMatrix3f",
+    "S_inverse": "SquareMatrix2f",
+    "S_det_inverse": "float",
+    "innov": "Vector2f"
+}

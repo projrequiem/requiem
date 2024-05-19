@@ -1,0 +1,21 @@
+{
+    "flags": {
+        "accel_error": "uint16_t",
+        "attitude": "uint16_t",
+        "const_pos_mode": "uint16_t",
+        "gps_glitch": "uint16_t",
+        "pos_horiz_abs": "uint16_t",
+        "pos_horiz_rel": "uint16_t",
+        "pos_vert_abs": "uint16_t",
+        "pos_vert_agl": "uint16_t",
+        "pred_pos_horiz_abs": "uint16_t",
+        "pred_pos_horiz_rel": "uint16_t",
+        "velocity_horiz": "uint16_t",
+        "velocity_vert": "uint16_t"
+    },
+    "value": "uint16_t",
+    "~assert": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());assert(ekfObj[\"%s\"][\"flags\"][\"attitude\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"velocity_horiz\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"velocity_vert\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"pos_horiz_rel\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"pos_horiz_abs\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"pos_vert_abs\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"pos_vert_agl\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"const_pos_mode\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"pred_pos_horiz_rel\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"pred_pos_horiz_abs\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"gps_glitch\"].IsUint());assert(ekfObj[\"%s\"][\"flags\"][\"accel_error\"].IsUint());}",
+    "~load": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());\n\trapidjson::Value& structObj = ekfObj[\"%s\"][\"flags\"];%s.flags.attitude = structObj[\"attitude\"].GetUint();\n%s.flags.velocity_horiz = structObj[\"velocity_horiz\"].GetUint();\n%s.flags.velocity_vert = structObj[\"velocity_vert\"].GetUint();\n%s.flags.pos_horiz_rel = structObj[\"pos_horiz_rel\"].GetUint();\n%s.flags.pos_horiz_abs = structObj[\"pos_horiz_abs\"].GetUint();\n%s.flags.pos_vert_abs = structObj[\"pos_vert_abs\"].GetUint();\n%s.flags.pos_vert_agl = structObj[\"pos_vert_agl\"].GetUint();\n%s.flags.const_pos_mode = structObj[\"const_pos_mode\"].GetUint();\n%s.flags.pred_pos_horiz_rel = structObj[\"pred_pos_horiz_rel\"].GetUint();\n%s.flags.pred_pos_horiz_abs = structObj[\"pred_pos_horiz_abs\"].GetUint();\n%s.flags.gps_glitch = structObj[\"gps_glitch\"].GetUint();\n%s.flags.accel_error = structObj[\"accel_error\"].GetUint();\n}",
+    "~serialize": "\n{\n\trapidjson::Value structObj(rapidjson::kObjectType);\nstructObj.SetObject();\n\trapidjson::Value innerStructObj(rapidjson::kObjectType);\ninnerStructObj.SetObject();\n\tinnerStructObj.AddMember(\"attitude\",%s.flags.attitude, allocator);\n\tinnerStructObj.AddMember(\"velocity_horiz\",%s.flags.velocity_horiz, allocator);\n\tinnerStructObj.AddMember(\"velocity_vert\",%s.flags.velocity_vert, allocator);\n\tinnerStructObj.AddMember(\"pos_horiz_rel\",%s.flags.pos_horiz_rel, allocator);\n\tinnerStructObj.AddMember(\"pos_horiz_abs\",%s.flags.pos_horiz_abs, allocator);\n\tinnerStructObj.AddMember(\"pos_vert_abs\",%s.flags.pos_vert_abs, allocator);\n\tinnerStructObj.AddMember(\"pos_vert_agl\",%s.flags.pos_vert_agl, allocator);\n\tinnerStructObj.AddMember(\"const_pos_mode\",%s.flags.const_pos_mode, allocator);\n\tinnerStructObj.AddMember(\"pred_pos_horiz_rel\",%s.flags.pred_pos_horiz_rel, allocator);\n\tinnerStructObj.AddMember(\"pred_pos_horiz_abs\",%s.flags.pred_pos_horiz_abs, allocator);\n\tinnerStructObj.AddMember(\"gps_glitch\",%s.flags.gps_glitch, allocator);\n\tinnerStructObj.AddMember(\"accel_error\",%s.flags.accel_error, allocator);\n\tstructObj.AddMember(\"flags\", innerStructObj, allocator);\n\tekfObj.AddMember(\"%s\", structObj, allocator);\n}",
+    "~union": true
+}

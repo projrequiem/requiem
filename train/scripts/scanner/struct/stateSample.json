@@ -1,0 +1,1 @@
+{"quat_nominal": "Quatf", "vel": "Vector3f", "pos": "Vector3f", "delta_ang_bias": "Vector3f", "delta_vel_bias": "Vector3f", "mag_I": "Vector3f", "mag_B": "Vector3f", "wind_vel": "Vector2f"}

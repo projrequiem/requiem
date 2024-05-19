@@ -1,0 +1,1 @@
+{"time_usec": "uint64_t", "lat": "int32_t", "lon": "int32_t", "alt": "int32_t", "yaw": "float", "yaw_offset": "float", "fix_type": "uint8_t", "eph": "float", "epv": "float", "sacc": "float", "vel_m_s": "float", "vel_ned": "Vector3f", "vel_ned_valid": "bool", "nsats": "uint8_t", "pdop": "float"}

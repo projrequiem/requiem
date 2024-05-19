@@ -1,0 +1,18 @@
+{
+    "~union":true,
+    "flags":{
+        "fix":"uint16_t",
+        "nsats":"uint16_t",
+        "pdop":"uint16_t",
+        "hacc" :"uint16_t",
+        "vacc" :"uint16_t",
+        "sacc" :"uint16_t",
+        "hdrift":"uint16_t",
+        "vdrift":"uint16_t",
+        "hspeed":"uint16_t",
+        "vspeed":"uint16_t"
+    },
+    "value":"uint16_t",
+    "~load":"{%s.fix = structObj[\"flags\"][\"fix\"].GetUint(); %s.nsats = structObj[\"flags\"][\"nsats\"]}",
+    "~serialize":""
+}

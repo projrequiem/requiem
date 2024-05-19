@@ -1,0 +1,11 @@
+{
+    "flags": {
+        "flow": "bool",
+        "range_finder": "bool"
+    },
+    "value": "uint8_t",
+    "~assert": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());assert(ekfObj[\"%s\"][\"flags\"][\"range_finder\"].IsBool());assert(ekfObj[\"%s\"][\"flags\"][\"flow\"].IsBool());}",
+    "~load": "{\n\tassert(ekfObj[\"%s\"].IsObject());\n\tassert(ekfObj[\"%s\"][\"flags\"].IsObject());\n\trapidjson::Value& structObj = ekfObj[\"%s\"][\"flags\"];%s.flags.range_finder = structObj[\"range_finder\"].GetBool();\n%s.flags.flow = structObj[\"flow\"].GetBool();\n}",
+    "~serialize": "\n{\n\trapidjson::Value structObj(rapidjson::kObjectType);\nstructObj.SetObject();\n\trapidjson::Value innerStructObj(rapidjson::kObjectType);\ninnerStructObj.SetObject();\n\tinnerStructObj.AddMember(\"range_finder\",%s.flags.range_finder, allocator);\n\tinnerStructObj.AddMember(\"flow\",%s.flags.flow, allocator);\n\tstructObj.AddMember(\"flags\", innerStructObj, allocator);\n\tekfObj.AddMember(\"%s\", structObj, allocator);\n}",
+    "~union": true
+}

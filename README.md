@@ -1,7 +1,8 @@
 # Requiem
 
-- `query_server`: Relating to the query server
-- 'train': Contains scripts for Requiem including data collection, surrogate training, spoofer training
+- `query_server`: Relating to the query server used in simulation evaluation
+- `train`: Contains scripts for Requiem including data collection, surrogate training, spoofer training
+- `hardware`: Contains files needed to replicate Requiem in hardware
 
 # Setup Specification
 
